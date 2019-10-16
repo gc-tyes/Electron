@@ -40,6 +40,27 @@
     flex: 1;
 }
 
+.timer {
+    font-size: 6vw;
+    text-align: left;
+}
+
+.timer-countdown {
+    width: 3vw !important;
+}
+
+.timer-one {
+    width: 12vw;
+}
+
+.timer-ten {
+    width: 15vw;
+}
+
+.timer-hundred {
+    width: 18vw;
+}
+
 .peg-display-div {
     display: flex;
     flex-direction: column;

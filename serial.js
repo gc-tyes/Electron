@@ -14,11 +14,12 @@ firebase.initializeApp(config);
 var db = firebase.database();
 
 function start() {
+    setupTimer();
+
     const portText = document.getElementById("portText");
     const startBtn = document.getElementById("startBtn");
     const pegs = document.getElementById("pegs");
     const prompt = document.getElementById("prompt");
-    const pushDataBtn = document.getElementById("pushDataBtn");
     var pegArr = ["This is so the peg number aligns with its index"]
     for (var i = 1; i <= 9; i++) {
         pegArr.push(document.getElementById("peg" + i))
@@ -28,7 +29,6 @@ function start() {
 
     startBtn.classList.add("gone");
     prompt.classList.add("gone");
-    pushDataBtn.classList.remove("gone");
     pegs.classList.remove("gone");
 
     async function getPort() {
@@ -96,6 +96,7 @@ function start() {
 }
 
 function pushData() {
+    stopTime();
     db.ref("Data").update({
         log: log
     })
