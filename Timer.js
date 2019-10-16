@@ -48,4 +48,7 @@ function updateTime() {
 
 function stopTime() {
     clearInterval(interval);
+    if (display.innerText.length() == 3) {
+        display.innerText = display.innerText + "0"
+    }
 }
