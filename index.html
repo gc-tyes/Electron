@@ -15,52 +15,54 @@
   </head>
   <body>
       <div class="main-div flex-center">
-          <div class="container main-box flex-even text-center">
-                <h5 id="portText" class="port-text"></h5>
-                <h1 id="justhereforspacing"></h1>
-                <h1 id="prompt">Press Start to Begin!</h1>
-                <div id="pegs" class="peg-display-div gone">
-                    <div class="flex-row">
-                        <div class="box">
-                            <div id="peg9" class="red-dot mx-auto"></div>
+          <div class="container main-background flex-center">
+            <div class="main-box flex-even text-center">
+                    <h5 id="portText" class="port-text"></h5>
+                    <h1 id="justhereforspacing"></h1>
+                    <h1 id="prompt">Press Start to Begin!</h1>
+                    <div id="pegs" class="peg-display-div gone">
+                        <div class="flex-row">
+                            <div class="box">
+                                <div id="peg9" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg8" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg7" class="red-dot mx-auto"></div>
+                            </div>
                         </div>
-                        <div class="box">
-                            <div id="peg8" class="red-dot mx-auto"></div>
+                        <div class="flex-row">
+                            <div class="box">
+                                <div id="peg6" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg5" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg4" class="red-dot mx-auto"></div>
+                            </div>
                         </div>
-                        <div class="box">
-                            <div id="peg7" class="red-dot mx-auto"></div>
+                        <div class="flex-row">
+                            <div class="box">
+                                <div id="peg3" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg2" class="red-dot mx-auto"></div>
+                            </div>
+                            <div class="box">
+                                <div id="peg1" class="red-dot mx-auto"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex-row">
-                        <div class="box">
-                            <div id="peg6" class="red-dot mx-auto"></div>
-                        </div>
-                        <div class="box">
-                            <div id="peg5" class="red-dot mx-auto"></div>
-                        </div>
-                        <div class="box">
-                            <div id="peg4" class="red-dot mx-auto"></div>
-                        </div>
+                    <div>
+                        <h1 id="timer" class="timer timer-one gone">0.00</h1>
                     </div>
-                    <div class="flex-row">
-                        <div class="box">
-                            <div id="peg3" class="red-dot mx-auto"></div>
-                        </div>
-                        <div class="box">
-                            <div id="peg2" class="red-dot mx-auto"></div>
-                        </div>
-                        <div class="box">
-                            <div id="peg1" class="red-dot mx-auto"></div>
-                        </div>
-                    </div>
+                    <button id="startBtn" class="button-text btn btn-outline-dark" onclick="start()">Start</button>
+                    <button id="pushDataBtn" class="button-text btn btn-outline-dark gone" onclick="pushData()">Push Data To Firebase</button>
+                    <button id="startTimerBtn" class="button-text btn btn-outline-dark gone" onclick="startCountdown()">BeginTest</button>
                 </div>
-                <div>
-                    <h1 id="timer" class="timer timer-one gone">0.00</h1>
-                </div>
-                <button id="startBtn" class="button-text btn btn-outline-dark" onclick="start()">Start</button>
-                <button id="pushDataBtn" class="button-text btn btn-outline-dark gone" onclick="pushData()">Push Data To Firebase</button>
-                <button id="startTimerBtn" class="button-text btn btn-outline-dark gone" onclick="startCountdown()">BeginTest</button>
-          </div>
+            </div>
       </div>
 
     <script src="firebase.js"></script>
