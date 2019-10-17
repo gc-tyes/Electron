@@ -20,6 +20,7 @@ function start() {
     const startBtn = document.getElementById("startBtn");
     const pegs = document.getElementById("pegs");
     const prompt = document.getElementById("prompt");
+    const mainDiv = document.getElementById("mainDiv");
     var pegArr = ["This is so the peg number aligns with its index"]
     for (var i = 1; i <= 9; i++) {
         pegArr.push(document.getElementById("peg" + i))
@@ -76,10 +77,12 @@ function start() {
 
         if (portName == "") {
             console.log("No usb serial port found");
-            portText.innerText = "No usb serial port found"
+            portText.innerText = "No usb serial port found";
+            mainDiv.classList.add("main-div-no-port");
             return;
         } else {
             console.log("Using port: " + portName + " with data rate " + datarate);
+            mainDiv.classList.remove("main-div-no-port");
             portText.innerText = ("Using port: " + portName + " with data rate " + datarate)
         }
         var myPort = new serialport(portName, datarate);
