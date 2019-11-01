@@ -16,7 +16,8 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  // HERE IS WHERE YOU CAN CHANGE WHAT PAGE YOU START AT
+  win.loadFile('./pages/TherapistDashboard.html')
 
   // Open the DevTools.
   win.webContents.openDevTools()

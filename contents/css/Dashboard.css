@@ -1,0 +1,127 @@
+.main-div {
+    background: #4A4C61;
+    min-height: 100vh
+}
+
+/* Navbar items styling */
+.nav {
+    background: #B5C6CC;
+    height: 65px;
+}
+
+.logo {
+    height: 45px;
+    padding-right: 3vw;
+}
+
+.nav-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.test {
+    align-self: center;
+}
+
+.nav-text {
+    padding-right: 3vw;
+    color: #4A4C61 !important;
+    font-size: 25px;
+}
+
+.separator-bar {
+    width: 100%;
+    background: #5CBDAA;
+    height: 5px;
+}
+
+/* Body styling */
+.title {
+    color: #E5836A;
+}
+
+.body {
+    background: white;
+    border-radius: 25px;
+    width: 90%;
+    height: 700px;
+    margin-top: 20px;
+    margin-left: 5%;
+    padding-top: 10px;
+}
+
+.spacer {
+    height: 20px;
+}
+
+
+/* users div stylng */
+.usersDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.thumbnail-image {
+    width: 140px;
+    border-radius: 25px;
+}
+
+.thumbnail-text {
+    font-size: 15px;
+}
+
+.thumbnail {
+    border-radius: 25px;
+    padding-top: 2px;
+    width: 160px;
+    height: 200px;
+    text-align: center;
+    border: solid;
+    box-shadow: 10px 10px 5px grey;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.user-text-div {
+    width: 100%;
+    background: white;
+    border-radius: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.thumbnail-new {
+    background-image: url("https://i.imgur.com/B8hiviv.png");
+    border-radius: 25px;
+    padding-top: 2px;
+    width: 160px;
+    height: 200px;
+    text-align: center;
+    border: solid;
+    box-shadow: 10px 10px 5px grey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.user-div-alignment {
+    min-height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
