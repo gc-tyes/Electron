@@ -36,6 +36,11 @@
     height: 5px;
 }
 
+.nav-padding {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
 /* Body styling */
 .title {
     color: #E5836A;
