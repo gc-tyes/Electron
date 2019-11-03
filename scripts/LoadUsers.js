@@ -36,3 +36,9 @@ function setupDisplay() {
         usersDiv.appendChild(instance);
     }
 }
+
+function changePage(word) {
+    var patientName = word.getElementsByTagName("*")[1].innerHTML
+    sessionStorage.currentPatient = patientName
+    document.location.href = "../pages/AboutUs.html"
+}
