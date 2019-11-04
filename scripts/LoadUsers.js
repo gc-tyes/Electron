@@ -16,7 +16,7 @@ const interval = setInterval(getData, 10);
 
 db.ref("Users").on('value', function(snapshot) {
     data = snapshot.val();
-  });
+});
 
 function getData() {
     if (data.length != 0) {

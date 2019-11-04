@@ -1,20 +1,19 @@
 var time = 0;
 var count = 3;
 var display = document.getElementById("timer");
-var startBtn = document.getElementById("startTimerBtn");
 const pushDataBtn = document.getElementById("pushDataBtn");
+const waitingText = document.getElementById("waitingText");
 var interval = null;
 
 /* Called when you first press start, makes time and button visible */
 function setupTimer() {
     display.classList.remove("gone");
-    startBtn.classList.remove("gone");
+    waitingText.classList.remove("gone");
 }
 
 /* Starts the actual test timer */
 function startTimer() {
     interval = setInterval(updateTime, 10);
-    startBtn.classList.add("gone");
     display.classList.remove("timer-countdown");
     pushDataBtn.classList.remove("gone");
 }

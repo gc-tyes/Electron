@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Hello World!</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
@@ -20,39 +20,44 @@
                     <h5 id="portText" class="port-text"></h5>
                     <h1 id="justhereforspacing"></h1>
                     <h1 id="prompt">Press Start to Begin!</h1>
-                    <div id="pegs" class="peg-display-div gone">
-                        <div class="flex-row">
-                            <div class="box">
-                                <div id="peg9" class="red-dot mx-auto"></div>
+                    <div id="userDisplay" class="gone flex-row flex-center">
+                        <div id="pegs" class="peg-display-div">
+                            <div class="flex-row">
+                                <div class="box">
+                                    <div id="peg9" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg8" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg7" class="red-dot mx-auto"></div>
+                                </div>
                             </div>
-                            <div class="box">
-                                <div id="peg8" class="red-dot mx-auto"></div>
+                            <div class="flex-row">
+                                <div class="box">
+                                    <div id="peg6" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg5" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg4" class="red-dot mx-auto"></div>
+                                </div>
                             </div>
-                            <div class="box">
-                                <div id="peg7" class="red-dot mx-auto"></div>
+                            <div class="flex-row">
+                                <div class="box">
+                                    <div id="peg3" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg2" class="red-dot mx-auto"></div>
+                                </div>
+                                <div class="box">
+                                    <div id="peg1" class="red-dot mx-auto"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="flex-row">
-                            <div class="box">
-                                <div id="peg6" class="red-dot mx-auto"></div>
-                            </div>
-                            <div class="box">
-                                <div id="peg5" class="red-dot mx-auto"></div>
-                            </div>
-                            <div class="box">
-                                <div id="peg4" class="red-dot mx-auto"></div>
-                            </div>
-                        </div>
-                        <div class="flex-row">
-                            <div class="box">
-                                <div id="peg3" class="red-dot mx-auto"></div>
-                            </div>
-                            <div class="box">
-                                <div id="peg2" class="red-dot mx-auto"></div>
-                            </div>
-                            <div class="box">
-                                <div id="peg1" class="red-dot mx-auto"></div>
-                            </div>
+                        <div id="pegLog" class="data-log">
+                            <h5 class="text-center"><u>Data Log</u></h5>
                         </div>
                     </div>
                     <div>
@@ -60,7 +65,7 @@
                     </div>
                     <button id="startBtn" class="button-text btn btn-outline-dark" onclick="start()">Start</button>
                     <button id="pushDataBtn" class="button-text btn btn-outline-dark gone" onclick="pushData()">Push Data To Firebase</button>
-                    <button id="startTimerBtn" class="button-text btn btn-outline-dark gone" onclick="startCountdown()">Begin Test</button>
+                    <h1 id="waitingText" class="text-center gone">Please Connect Device</h1>
                 </div>
             </div>
       </div>
