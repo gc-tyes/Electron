@@ -60,6 +60,10 @@
     height: 20px;
 }
 
+.subtext {
+    color: #4A4C61;
+}
+
 
 /* users div stylng */
 .usersDiv {
@@ -76,16 +80,18 @@
 
 .thumbnail-text {
     font-size: 15px;
+    color: #4A4C61;
 }
 
 .thumbnail {
-    border-radius: 25px;
     padding-top: 2px;
     width: 160px;
     height: 200px;
     text-align: center;
     border: solid;
-    box-shadow: 10px 10px 5px grey;
+    border-color: #4A4C61;
+    border-radius: 5px;
+    box-shadow: 6px 6px 5px grey;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -97,7 +103,6 @@
 .user-text-div {
     width: 100%;
     background: white;
-    border-radius: 25px;
     padding-left: 5px;
     padding-right: 5px;
     min-height: 50px;
@@ -108,13 +113,14 @@
 
 .thumbnail-new {
     background-image: url("https://i.imgur.com/B8hiviv.png");
-    border-radius: 25px;
     padding-top: 2px;
     width: 160px;
     height: 200px;
     text-align: center;
     border: solid;
-    box-shadow: 10px 10px 5px grey;
+    border-color: #4A4C61;
+    border-radius: 5px;
+    box-shadow: 6px 6px 5px grey;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
