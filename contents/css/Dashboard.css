@@ -157,13 +157,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: rgba(0, 0, 0, .5)
 }
 
 .add-user-popup {
     width: 60%;
     height: 60%;
     background: white;
-    border: solid;
     border-radius: 25px;
     display: flex;
     flex-direction: column;
