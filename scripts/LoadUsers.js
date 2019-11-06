@@ -28,8 +28,7 @@ function getData() {
 function setupDisplay() {
     const usersDiv = document.getElementById("usersDiv");
     const fragment = document.getElementById("user");
-
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < Object.keys(data).length; i++) { 
         const instance = document.importNode(fragment.content, true);
         instance.querySelector('.thumbnail-text').innerHTML = data[i][0];
         instance.querySelector('.thumbnail').style.backgroundImage = ("url(" + data[i][1] + ")");
