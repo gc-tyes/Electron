@@ -13,24 +13,29 @@ var config = {
 firebase.initializeApp(config);
 var db = firebase.database();
 
+// This interval is used to check for the user pressing the sensor that starts the test
+var awaitingStartInterval;
+// this is a global variable that determines if the user has begun the test
+var testHasBegun = false;
+
 function start() {
     setupTimer();
+    awaitingStartInterval = setInterval(checkForStart, 10);
 
     const portText = document.getElementById("portText");
     const startBtn = document.getElementById("startBtn");
-    const pegs = document.getElementById("pegs");
+    const userDisplay = document.getElementById("userDisplay");
     const prompt = document.getElementById("prompt");
     const mainDiv = document.getElementById("mainDiv");
     var pegArr = ["This is so the peg number aligns with its index"]
     for (var i = 1; i <= 9; i++) {
         pegArr.push(document.getElementById("peg" + i))
     }
-    console.log(pegArr)
 
 
     startBtn.classList.add("gone");
     prompt.classList.add("gone");
-    pegs.classList.remove("gone");
+    userDisplay.classList.remove("gone");
 
     async function getPort() {
         let portName = '';
@@ -53,6 +58,8 @@ function start() {
         log.push(data);
         var pegNum = data.split(',')[1];
         var onOff = data.split(',')[2];
+
+        // CHECK FOR IF THE USER HAS TOUCHED THE START SENSOR, THEN UPDATE testHasBegun IF YOU GET THE SIGNAL
 
         if (onOff == 1) {
             pegArr[pegNum].classList.add('green-dot');
@@ -79,11 +86,13 @@ function start() {
             console.log("No usb serial port found");
             portText.innerText = "No usb serial port found";
             mainDiv.classList.add("main-div-no-port");
+            document.getElementById("waitingText").innerHTML = "Please Connect Device"
             return;
         } else {
             console.log("Using port: " + portName + " with data rate " + datarate);
             mainDiv.classList.remove("main-div-no-port");
             portText.innerText = ("Using port: " + portName + " with data rate " + datarate)
+            document.getElementById("waitingText").innerHTML = "Press Sensor To Begin"
         }
         var myPort = new serialport(portName, datarate);
         var Readline = serialport.parsers.Readline; // make instance of Readline parser
@@ -96,6 +105,10 @@ function start() {
     }
 
     serialIn();
+}
+
+function checkForStart() {
+
 }
 
 function pushData() {
