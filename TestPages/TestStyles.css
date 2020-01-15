@@ -25,12 +25,23 @@
 }
 
 .title-text {
-    font-size: 3vw;
+    font-size: 4.2vw;
 }
 
 .options-div {
     flex-direction: row;
     width: 80%;
+}
+
+.main-btn {
+    border: solid;
+    border-color: #4A4C61;
+    font-size: 2.5vw;
+}
+
+.main-btn:hover {
+    color: white;
+    background: #4A4C61;
 }
 
 .flex-center {
@@ -47,4 +58,40 @@
 
 .rounded {
     border-radius: 2%;
+}
+
+/* Styles used for only the Test page */
+.peg-display-div {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 25vw;
+}
+
+.red-dot {
+    background: red;
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+}
+
+.green-dot {
+    background: green;
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid;
+    flex: 1;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
 }
