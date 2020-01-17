@@ -7,50 +7,54 @@
         <link rel="stylesheet" href="./TestStyles.css">
     </head>
     <body>
-        <div class="background-div flex-center">
+        <div class="background-div test-bg flex-center">
             <div class="main-div flex-center rounded">
-                <div class="text-div flex-even rounded">
-                    <h5 id="portText" class="port-text"></h5>
-                    <h1 id="justhereforspacing"></h1>
-                    <h1 id="prompt">Press Start to Begin!</h1>
-                    <div id="pegs" class="peg-display-div">
+                <div class="text-div text-center flex-even rounded">
+                    <!-- <h5 id="portText" class="port-text">Port Text</h5> -->
+                    <h1 id="prompt" class="prompt-text">Place your hand on the well to begin</h1>
+                    <div id="pegs" class="gone peg-display-div">
                         <div class="flex-row">
                             <div class="box">
-                                <div id="peg9" class="red-dot mx-auto"></div>
+                                <div id="peg9" class="red-dot mx-auto" onclick="updatePeg(9)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg8" class="red-dot mx-auto"></div>
+                                <div id="peg8" class="red-dot mx-auto" onclick="updatePeg(8)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg7" class="red-dot mx-auto"></div>
+                                <div id="peg7" class="red-dot mx-auto" onclick="updatePeg(7)"></div>
                             </div>
                         </div>
                         <div class="flex-row">
                             <div class="box">
-                                <div id="peg6" class="red-dot mx-auto"></div>
+                                <div id="peg6" class="red-dot mx-auto" onclick="updatePeg(6)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg5" class="red-dot mx-auto"></div>
+                                <div id="peg5" class="red-dot mx-auto" onclick="updatePeg(5)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg4" class="red-dot mx-auto"></div>
+                                <div id="peg4" class="red-dot mx-auto" onclick="updatePeg(4)"></div>
                             </div>
                         </div>
                         <div class="flex-row">
                             <div class="box">
-                                <div id="peg3" class="red-dot mx-auto"></div>
+                                <div id="peg3" class="red-dot mx-auto" onclick="updatePeg(3)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg2" class="red-dot mx-auto"></div>
+                                <div id="peg2" class="red-dot mx-auto" onclick="updatePeg(2)"></div>
                             </div>
                             <div class="box">
-                                <div id="peg1" class="red-dot mx-auto"></div>
+                                <div id="peg1" class="red-dot mx-auto" onclick="updatePeg(1)"></div>
                             </div>
                         </div>
                     </div>
-                    <button id="startBtn" class="button-text btn btn-outline-dark" onclick="start()">Start</button>
+                    <h1 id="timer" class="gone">0</h1>
+                    <button id="finesseButton" class="button-text btn btn-outline-dark" onclick="goToReadyPhase()">Simulate Button Press</button>
+                    <button id="finesseButton2" class="button-text btn btn-outline-dark gone" onclick="start()">Simulate Hand Release</button>
+                    <button id="returnHomeButton" class="button-text btn btn-outline-dark gone" onclick="goToHome()">Return to Home Page</button>
                 </div>
             </div>
         </div>
+        <script src="./Timer.js"></script>
+        <script src="./Test.js"></script>
     </body>
 </html>
