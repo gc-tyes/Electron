@@ -81,6 +81,12 @@
     flex-direction: column;
     width: 25vw;
     height: 25vw;
+    margin-right: 5vw;
+}
+
+.data-log {
+    width: 25vw;
+    height: 25vw;
 }
 
 .button-text {

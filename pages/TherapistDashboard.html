@@ -13,39 +13,37 @@
     </head>
     <body>
         <template id="user">
-            <div class="thumbnail">
+            <div class="thumbnail" onclick="changePage(this)">
                 <div class="user-text-div">
                     <h1 class="thumbnail-text">Michael Keohane</h1>
                 </div>
             </div>
         </template>
         <div class="main-div">
-            <nav class="navbar navbar-expand-lg navbar-light nav">
-                    <img class="logo" src="../images/logo2.png" alt="Tyes" />
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-text" href="#">Dashboard <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-text" href="#">Conduct A Test</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-text" href="#">About Tyes</a>
-                        </li>
-                    </ul>
+                <nav class="navbar-sticky nav">
+                    <div class="nav-div nav-padding">
+                        <img class="logo" src="../images/logo2.png" alt="Tyes" />
+                        <ul class="navbar-nav nav-div">
+                            <li class="nav-item">
+                            <a class="nav-text" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-text" href="#">Conduct A Test</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-text" href="./AboutUs.html?myVar1=42&myVar2=66">About Tyes</a>
+                            </li>
+                        </ul>
                     </div>
-                </nav>
+                  </nav>
             <div class="separator-bar"></div>
             <div class="body text-center">
-                <h1 class="title display-4">Patients Dashboard</h1>
+                <h1 class="title display-3">Patients Dashboard</h1>
+                <p class="text-center subtext"><i>(Click on any of your patients for a more detailed breakdown!)</i></p>
                 <div class="spacer" ></div>
                 <div class="user-div-alignment">
                     <div id="usersDiv" class="usersDiv">
-                        <div class="thumbnail-new">
+                        <div class="thumbnail-new" onclick="showPopup()">
                             <div class="user-text-div">
                                 <h1 class="thumbnail-text">Add New Patient</h1>
                             </div>
@@ -54,7 +52,23 @@
                 </div>
             </div>
             <div class="spacer"></div>
+            <div id="popupDiv" class="add-user-popup-div gone">
+                <div class="add-user-popup mx-auto">
+                    <div id="firstPrompt" class="text-center">
+                            <h1 class="popup-prompt-text">Would you like to generate a new user code?</h1>
+                            <div class="first-prompt-buttons mx-auto">
+                                <button class="popup-prompt-button" onclick="generateCode()">Yes</button>
+                                <button class="popup-prompt-button" onclick="removePopup()">Cancel</button>
+                            </div>
+                    </div>
+                    <div id="generateCode" class="text-center gone">
+                        <h1 id="codeText" class="popup-prompt-text">Your code is: </h1>
+                        <button class="mx-auto popup-prompt-button" onclick="removePopup()">OK</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src='../scripts/LoadUsers.js'></script>
+        <script src="../scripts/AddUserPopupScript.js"></script>
     </body>
 </html>
