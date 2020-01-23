@@ -1,0 +1,83 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family:  sans-serif;
+}
+section
+{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, #ffffff, #00FF7F);
+}
+.box
+{
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  transform: translateX(-50%,-50%);
+  width: 650px;
+  height:400px;
+  background: transparent;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  display: flex;
+}
+.box .result
+{
+  position: relative;
+  flex: 1;
+  text-align: center;
+
+}
+.box .result .graph
+{
+  position:  absolute;
+  width: 40px;
+  background: rgba(0, 0, 0, 1);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box .result .graph::before
+{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background: linear-gradient(0deg, #003ba5, #009ffe);
+}
+.box .result .graph::after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,.1);
+}
+.box .result .graph .time
+{
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+.box .result .date
+{
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000;
+  background: #556fde;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
