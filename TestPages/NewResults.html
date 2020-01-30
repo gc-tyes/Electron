@@ -31,8 +31,29 @@
                       </nav>
             <div class="separator-bar"></div>
             <div class="body text-center">
-                <div class="spacer" ></div>
-                <h1 id="name"></h1>
+              <div class="container">
+                <canvas id="myChart"></canvas>
+              </div>
+              <script>
+                let myChart = document.getElementById('myChart').getContext('2d');
+
+                let testResultsChart = new Chart(myChart, {
+                  type:'bar',
+                  data:{
+                    labels:['1/27/20', '1/28/20', '1/29/20', '1/30/20'],
+                    datasets:[{
+                      label: 'Time (in seconds)',
+                      data: [
+                        28.51,
+                        27.95,
+                        27.57,
+                        26.83
+                      ]
+                    }]
+                  },
+                  options:{},
+                });
+              </script>
             </div>
             <div class="spacer"></div>
         </div>
