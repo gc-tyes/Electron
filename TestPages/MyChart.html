@@ -10,28 +10,80 @@
 </head>
 <body>
   <div class="container">
-    <canvas id="myChart"></canvas>
+    <canvas id="myChart" width="400" height="200"></canvas>
   </div>
+  <button id="addData">New Result</button>
   <script>
-    let myChart = document.getElementById('myChart').getContext('2d');
+    var myChart = document.getElementById('myChart').getContext('2d');
 
-    let testResultsChart = new Chart(myChart, {
+    //Global Options
+    //console.log(Chart.defaults.scale.ticks);
+    Chart.defaults.global.animation.duration = 1500;
+    //Chart.defaults.scale.ticks.beginAtZero = true;
+    //Chart.defaults.global.defaultFontFamily = '',
+    //Chart.defaults.global.defaultFontSize = 18,
+    //Chart.defaults.global.defaultFontColor = '';
+
+    var testResultsChart = new Chart(myChart, {
       type:'bar',
       data:{
-        labels:['1/27/20', '1/28/20', '1/29/20', '1/30/20'],
+        labels:['1/25/20', '1/26/20', '1/27/20', '1/28/20', '1/29/20', '1/30/20'],
         datasets:[{
-          label: 'Time (in seconds)',
+          label: 'Time (seconds)',
           data: [
             28.51,
             27.95,
             27.57,
-            26.83
+            26.83,
+            26.48,
+            26.20
           ],
-          backgroundColor:'5CBDAA'
+          backgroundColor:'#5CBDAA',
+          borderWidth:1,
+          borderColor:'#B5C6CC',
+          hoverBorderWidth:2,
+          hoverBorderColor: '#4A4C61',
+          //xAxisID: 'Date of Test'
+          //yAxisID: 'Time (seconds)'
         }]
       },
-      options:{},
+      options:{
+        title:{
+          display:true,
+          text:'Most Recent Tests Taken',
+          fontSize:24
+        },
+        legend:{
+          display:false
+        },
+        layout:{
+          padding:{
+            left:0,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true,
+          backgroundColor:'rgba(0, 0, 0, 0.6)'
+        },
+        scales:{
+          yAxes:[{
+            ticks:{
+              beginAtZero:false
+            }
+          }]
+        }
+      }
     });
+    function addData(chart, label, data) {
+      chart.data.labels.push(label);
+      chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
+      });
+      chart.update();
+    }
   </script>
 </body>
 </html>
