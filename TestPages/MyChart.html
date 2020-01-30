@@ -12,7 +12,7 @@
   <div class="container">
     <canvas id="myChart" width="400" height="200"></canvas>
   </div>
-  <button id="addData">New Result</button>
+  <button onclick="addData(this, this)">New Result</button>
   <script>
     var myChart = document.getElementById('myChart').getContext('2d');
 
@@ -77,9 +77,9 @@
         }
       }
     });
-    function addData(chart, label, data) {
-      chart.data.labels.push(label);
-      chart.data.datasets.forEach((dataset) => {
+    function addData(label, data) {
+      myChart.data.labels.push(label);
+      myChart.data.datasets.forEach((dataset) => {
         dataset.data.push(data);
       });
       chart.update();
