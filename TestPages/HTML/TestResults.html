@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+        <!-- bootstrap import -->
+        <link rel="stylesheet" href="../../contents/bootstrap/css/bootstrap.min.css" />
+        <!-- my stylesheet import -->
+        <link rel="stylesheet" href="../Styles/ResultsStyles.css">
+        <link rel="stylesheet" href="../Styles/TestStyles.css">
+    </head>
+    <body>
+        <div class="background-div result-bg flex-center">
+            <div class="main-div flex-center rounded">
+                <div class="text-div flex-even rounded">
+                    <h1 class="title" onclick="goBack()">Survey Results</h1>
+                    <div class="data">
+                        <div class="numerical-data">
+                            <h1 id="numTests" class="numerical">Number of tests: </h1>
+                            <h1 id="avgTime" class="numerical">Average Total Time: </h1>
+                            <h1 id="avgPlace" class="numerical">Average Placement Time: </h1>
+                            <h1 id="avgRem" class="numerical">Average Removal Time: </h1>
+                            <h1 id="avgBetPlace" class="numerical">Average Time Between Placements: </h1>
+                            <h1 id="avgBetRem" class="numerical">Average Time Between Removals: </h1>
+                        </div>
+                        <canvas class="my-canvas" id="myChart" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../Scripts/Results.js"></script>
+        <script src="../../node_modules/chart.js/dist/Chart.js"></script>
+        
+    </body>
+</html>

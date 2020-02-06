@@ -1,41 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="../contents/css/Dashboard.css" />
-    </head>
-    <body>
-        <div class="main-div">
-                <nav class="navbar-sticky nav">
-                        <div class="nav-div nav-padding">
-                            <img class="logo" src="../images/logo2.png" alt="Tyes" />
-                            <ul class="navbar-nav nav-div">
-                                <li class="nav-item">
-                                <a class="nav-text" href="./TherapistDashboard.html">Dashboard <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-text" href="#">Conduct A Test</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-text" href="#">About Tyes</a>
-                                </li>
-                            </ul>
-                        </div>
-                      </nav>
-            <div class="separator-bar"></div>
-            <div class="body text-center">
-                <div class="spacer" ></div>
-                <h1 id="name"></h1>
+
+<head>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../contents/css/Dashboard.css" />
+</head>
+
+<body>
+    <div class="main-div">
+        <nav class="navbar-sticky nav">
+            <div class="nav-div nav-padding">
+                <img class="logo" src="../images/logo2.png" alt="Tyes" />
+                <ul class="navbar-nav nav-div">
+                    <li class="nav-item">
+                        <a class="nav-text" href="./TherapistDashboard.html">Dashboard <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-text" href="#">Conduct A Test</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-text" href="#">About Tyes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="separator-bar"></div>
+        <div class="body text-center">
+            <div class="spacer"></div>
+            <h1 class="title display-4">About Tyes</h1>
+            <div class="spacer"></div>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        <p>We are developing an improvement upon the
+                            9-Hole Peg Test in order to extract more specific fine motor skill diagnostics. It is equipped with a printed circuit under a replaceable board, which comes
+                            with a variety of hole sizes and shapes. Sensors allow the device to record three types of data: the time to pick up a peg, the time to place it into a hole, and overall test time. 
+                        </p>
+                        <p>The data is displayed on the Dashboard as a detailed
+                            graphical breakdown of patient performance and
+                            progress from previous tests. From there the therapist can customize patient
+                            therapy to facilitate recovery.</p>
+                    </div>
+                    <div class="col">
+                        <img src="https://i.imgur.com/ussyuNR.png" width="400px" height="300px"
+                            title="source: imgur.com" />
+                    </div>
+                </div>
+            <div class="spacer"></div>
+                <h1 class="lead font-italic">With built-in sensors, the Tyes 9HPT shows patient progress
+                    online. Complete therapist assignments. Practice with games customized by you. Connect anywhere just
+                    by plugging it in. Recovery starts now.</h1>
             </div>
             <div class="spacer"></div>
+            <a href="LoginPage.html"><button type="button" class="btn btn-outline-dark text-center btn-lg">
+                Get Started</button></a>
         </div>
+<<<<<<< HEAD
         <script src='../scripts/ViewUser.js'></script>
     </body>
 </html>
+=======
+    </div>
+    <div class="spacer"></div>
+    </div>
+    <script src='../scripts/ViewUser.js'></script>
+</body>
+
+</html>
+>>>>>>> master

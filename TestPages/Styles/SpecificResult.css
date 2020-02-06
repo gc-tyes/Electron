@@ -1,0 +1,54 @@
+.specific-bg {
+    background: #1C713F;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: 90%;
+}
+
+.canvas {
+    width: 35vw;
+    height: 35vw;
+    margin-bottom: 1vw;
+    border: solid;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    height: 100%;
+}
+
+.centering {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.key {
+    width: 22vw;
+    height: 5vw;
+    border: solid;
+}
+
+.key-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.my-canvas {
+    width: 30vw !important;
+    height: 30vw !important;
+}
+
+.text {
+    font-size: 3vw;
+}

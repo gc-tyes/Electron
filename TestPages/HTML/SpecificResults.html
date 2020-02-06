@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+        <!-- bootstrap import -->
+        <link rel="stylesheet" href="../../contents/bootstrap/css/bootstrap.min.css" />
+        <!-- my stylesheet import -->
+        <link rel="stylesheet" href="../Styles/TestStyles.css">
+        <link rel="stylesheet" href="../Styles/SpecificResult.css">
+    </head>
+    <body>
+        <div class="background-div specific-bg flex-center">
+            <div class="main-div flex-center rounded">
+                <div class="text-div flex-even rounded">
+                    <div class="rows">
+                        <div class="right-side">
+                            <canvas id="myCanv" class="canvas" width="500" height="500"></canvas>
+                            <div class="key-div">
+                                <h1 class="text">Key</h1>
+                                <canvas id="key" class="key" width="500" height="100"></canvas>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="centering">
+                                <canvas class="my-canvas" id="myChart" width="300" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../Scripts/PlacementResults.js"></script>
+        <script src="../Scripts/RemovalResults.js"></script>
+        <script src="../../node_modules/chart.js/dist/Chart.js"></script>
+    </body>
+</html>

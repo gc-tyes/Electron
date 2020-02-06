@@ -1,0 +1,10 @@
+/* form styling */
+
+.form-group {
+    text-align: center;
+    display: inline-block;
+}
+
+.form-control {
+    display: block;
+}
