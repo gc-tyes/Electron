@@ -17,11 +17,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   // HERE IS WHERE YOU CAN CHANGE WHAT PAGE YOU START AT
-<<<<<<< HEAD
-  win.loadFile('./TestPages/MyResults.html')
-=======
   win.loadFile('./TestPages/HTML/TestMain.html')
->>>>>>> master
 
   // Open the DevTools.
   win.webContents.openDevTools()
