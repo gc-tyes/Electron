@@ -200,3 +200,17 @@
 .popup-prompt-button:hover {
     background-color: #646783;
 }
+
+/* PATIENT DASHBOARD STUFF */
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 20px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
