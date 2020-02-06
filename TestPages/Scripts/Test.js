@@ -10,6 +10,7 @@ var finesseButton = document.getElementById("finesseButton");
 var finesseButton2 = document.getElementById("finesseButton2");
 var promptText = document.getElementById("prompt");
 var homeButton = document.getElementById("returnHomeButton");
+var resultsButton = document.getElementById("goToResultsButton");
 
 /*
     called when user places hand on force sensor to get the test ready, test starts once their hand is off
@@ -42,6 +43,7 @@ function end() {
     promptText.innerText = "Test Complete";
     pegDisplay.classList.add("gone");
     homeButton.classList.remove("gone");
+    resultsButton.classList.remove("gone");
 }
 
 /*
@@ -49,4 +51,11 @@ function end() {
 */
 function goToHome() {
     document.location.href = "./TestMain.html"
+}
+
+/*
+    Goes to results screen
+*/
+function getResults() {
+    document.location.href = "./SpecificResults.html"
 }
