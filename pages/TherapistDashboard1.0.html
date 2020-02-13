@@ -8,7 +8,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
-    <!-- CSS for bootstrap and Mike's dashboard that I am copping-->
     <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../contents/css/Dashboard.css" />
     <link rel="stylesheet" href="../contents/css/LogIn.css" />
@@ -33,51 +32,27 @@
                         <a class="nav-text" href="#">Conduct A Test</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-text" href="#">About Tyes</a>
+                        <a class="nav-text" href="./AboutUs.html">About Tyes</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <div class="separator-bar"></div>
         <div class="body text-center">
-            <h1 class="title display-4">Patient Dashboard</h1>
+            <h1 class="title display-4">Therapist Dashboard</h1>
             <div class="spacer"></div>
-<<<<<<< HEAD
-            <div class="row">
-                <div class="column">
-                    <h2>Welcome, Sally!</h2>
-                    <p>TODAY
-                        <ul>
-                            boop
-                        </ul>
-                        <ul>
-                            beep
-                        </ul>
-                        <ul>
-                            list
-                        </ul>
-                        <ul>
-                            tasks
-                        </ul>
-                    </p>
-                </div>
-                <div class="column">
-                    <h2>Therapist Info</h2>
-                    <p>Some text..</p>
-                    <button onclick="" class="btn btn-info">Practice Now</button>
+            <!-- <button body = "center" class="btn-lg btn-success"formaction="/AddAPatient.html">Add A Patient</button> -->
+            <button id="addAPatient"  class="submit-button" >Add a patient to your directory</button>
 
-                    <button onclick="" class="btn btn-info">My Results</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="spacer"></div>
-=======
+			<script type="text/javascript">
+    			document.getElementById("addAPatient").onclick = function () {
+        		location.href = "AddAPatient.html";
+    			};
+			</script>
             </div>
         </div>
         <div class="spacer"></div>
->>>>>>> lindsay
+        
     </div>
     <script src='../scripts/AuthorizeUsers.js'></script>
 </body>
