@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../contents/css/Dashboard.css" />
+  <title>My Chart</title>
+</head>
+<body>
+  <div class="main-div">
+          <nav class="navbar-sticky nav">
+                  <div class="nav-div nav-padding">
+                      <img class="logo" src="../images/logo2.png" alt="Tyes" />
+                      <ul class="navbar-nav nav-div">
+                          <li class="nav-item">
+                          <a class="nav-text" href="./TherapistDashboard.html">Dashboard <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item">
+                          <a class="nav-text" href="./HTML/TestMain.html">Conduct A Test</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-text" href="./AboutUs.html">About Tyes</a>
+                        </li>
+                      </ul>
+                  </div>
+                </nav>
+      <div class="separator-bar"></div>
+      <div class="body text-center">
+        <div class="container">
+          <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+        
+      </div>
+      <div class="spacer"></div>
+  </div>
+
+</body>
+</html>
