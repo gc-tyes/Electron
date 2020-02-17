@@ -1,6 +1,6 @@
 .main-div {
     background: #4A4C61;
-    min-height: 100vh
+    height: 100vh
 }
 
 /* Navbar items styling */
@@ -44,106 +44,156 @@
 /* Body styling */
 .title {
     color: #E5836A;
+    font-size: 4vw;
 }
 
 .body {
-    background: white;
+    background: #EEEEEE;
     border-radius: 25px;
     width: 90%;
-    height: 700px;
+    height: 85%;
+    border: solid;
     margin-top: 20px;
     margin-left: 5%;
     padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.spacer {
-    height: 20px;
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.meetings-div {
+    background: white;
+    border: solid;
+    border-width: thin;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10%;
+    width: 80%;
+    height: 50%;
+}
+
+.meetings-list {
+    width: 100%;
+    overflow: auto;
+    height: 74%;
+    text-align: left;
+}
+
+.patients-div {
+    background: white;
+    border: solid;
+    border-width: thin;
+    width: 90%;
+    height: 80%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.patients-list {
+    width: 100%;
+    overflow: auto;
+    height: 80%;
+    text-align: left;
+}
+
+.heading {
+    font-size: 2vw;
+    height: 11%;
+    margin-bottom: 0px;
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.btn1-div {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    background: #B5C6CC;
+    justify-content: center;
+    border-top: solid;
+    border-width: thin;
+}
+
+.btn2-div {
+    height: 9%;
+    width: 100%;
+    display: flex;
+    background: #B5C6CC;
+    flex-direction: row;
+    justify-content: center;
+    border-top: solid;
+    border-width: thin;
+}
+
+.add-btn {
+    margin: 1%;
+    border-radius: 25px;
+    background-color: #4A4C61;
+    width: 30%;
+    border: solid;
+    border-color: #5CBDAA;
+    color: white;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #646783;
 }
 
 .subtext {
     color: #4A4C61;
 }
 
+.scrollable {
+    overflow: scroll;
+    height: 200px;
+    background: red;
+}
 
-/* users div stylng */
-.usersDiv {
+
+/* patients list stylng */
+.patient-item {
+    width: 100%;
+    padding: 1%;
+    height: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.thumbnail-image {
-    width: 140px;
-    border-radius: 25px;
-}
-
-.thumbnail-text {
-    font-size: 15px;
+    justify-content: space-between;
+    transition: 0.2s;
     color: #4A4C61;
 }
 
-.thumbnail {
-    padding-top: 2px;
-    width: 160px;
-    height: 200px;
-    text-align: center;
-    border: solid;
-    border-color: #4A4C61;
-    border-radius: 5px;
-    box-shadow: 6px 6px 5px grey;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: 0.3s;
+.name {
+    font-size: 1.5vw;
 }
 
-.thumbnail:hover {
-    transform: translate(0px, -10px);
+.patient-item:hover {
+    color: #5CBDAA;
+    cursor: pointer;
 }
 
-.user-text-div {
-    width: 100%;
-    background: white;
-    padding-left: 5px;
-    padding-right: 5px;
-    min-height: 50px;
+.patient-id {
+    font-size: 1.5vw;
+}
+
+.alignment {
     display: flex;
     flex-direction: column;
+    height: 15%;
     justify-content: center;
-}
-
-.thumbnail-new {
-    background-image: url("https://i.imgur.com/B8hiviv.png");
-    padding-top: 2px;
-    width: 160px;
-    height: 200px;
-    text-align: center;
-    border: solid;
-    border-color: #4A4C61;
-    border-radius: 5px;
-    box-shadow: 6px 6px 5px grey;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: 0.3s;
-}
-
-.thumbnail-new:hover {
-    transform: translate(0px, -10px);
-}
-
-.user-div-alignment {
-    min-height: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    border-bottom: solid;
+    border-width: 1px;
 }
 
 /* POPUP STYLING */
@@ -213,4 +263,19 @@
   content: "";
   display: table;
   clear: both;
+}
+
+/* Hiding scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }

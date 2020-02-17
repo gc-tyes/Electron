@@ -26,18 +26,23 @@ function getData() {
 }
 
 function setupDisplay() {
-    const usersDiv = document.getElementById("usersDiv");
+    const usersDiv = document.getElementById("patients-list");
     const fragment = document.getElementById("user");
     for (var i = 0; i < Object.keys(data).length; i++) { 
         const instance = document.importNode(fragment.content, true);
-        instance.querySelector('.thumbnail-text').innerHTML = data[i][0];
-        instance.querySelector('.thumbnail').style.backgroundImage = ("url(" + data[i][1] + ")");
+        instance.querySelector('.name').innerHTML = data[i][0];
+        var thing = ["0","1","2","3","4","5","6","7","8","9"];
+        var id = "#";
+        for (var x = 0; x < 5; x++) {
+            id += thing[Math.floor(Math.random() * 10)];
+        }
+        instance.querySelector('.patient-id').innerHTML = id;
         usersDiv.appendChild(instance);
     }
 }
 
 function changePage(word) {
-    var patientName = word.getElementsByTagName("*")[1].innerHTML
+    var patientName = word.getElementsByTagName("*")[0].innerHTML
     sessionStorage.currentPatient = patientName
-    document.location.href = "../pages/AboutUs.html"
+    document.location.href = "../pages/ViewPatient.html"
 }

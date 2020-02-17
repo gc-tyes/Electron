@@ -13,9 +13,10 @@
     </head>
     <body>
         <template id="user">
-            <div class="thumbnail" onclick="changePage(this)">
-                <div class="user-text-div">
-                    <h1 class="thumbnail-text">Michael Keohane</h1>
+            <div class="alignment" onclick="changePage(this)">
+                <div class="patient-item">
+                    <h1 class="name"></h1>
+                    <h1 class="patient-id"></h1>
                 </div>
             </div>
         </template>
@@ -28,9 +29,6 @@
                             <a class="nav-text" href="#">Dashboard <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-text" href="#">Conduct A Test</a>
-                            </li>
-                            <li class="nav-item">
                             <a class="nav-text" href="./AboutUs.html?myVar1=42&myVar2=66">About Tyes</a>
                             </li>
                         </ul>
@@ -38,15 +36,33 @@
                   </nav>
             <div class="separator-bar"></div>
             <div class="body text-center">
-                <h1 class="title display-3">Patients Dashboard</h1>
-                <p class="text-center subtext"><i>(Click on any of your patients for a more detailed breakdown!)</i></p>
-                <div class="spacer" ></div>
-                <div class="user-div-alignment">
-                    <div id="usersDiv" class="usersDiv">
-                        <div class="thumbnail-new" onclick="showPopup()">
-                            <div class="user-text-div">
-                                <h1 class="thumbnail-text">Add New Patient</h1>
-                            </div>
+                <div class="left-column">
+                    <h1 class="title display-3"><i>Welcome Dr. Wolf!</i></h1>
+                    <div class="meetings-div">
+                        <h1 class="heading">Meetings Today</h1>
+                        <div class="meetings-list">
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                            <h3>Test</h3>
+                        </div>
+                        <div class="btn1-div">
+                            <button class="add-btn">Add Meeting</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-column">
+                    <div class="patients-div">
+                        <h1 class="heading">Patients</h1>
+                        <div id="patients-list" class="patients-list">
+                            <!-- Items populated by the LoadUsers script -->
+                        </div>
+                        <div class="btn2-div">
+                            <button class="add-btn" onclick="showPopup()">Add Patient</button>
                         </div>
                     </div>
                 </div>
