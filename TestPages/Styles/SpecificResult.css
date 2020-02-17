@@ -1,5 +1,5 @@
 .specific-bg {
-    background: #1C713F;
+    background: #FBC669;
 }
 
 .rows {
@@ -51,4 +51,31 @@
 
 .text {
     font-size: 3vw;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 5%;
+    margin-bottom: 1vw;
+}
+
+.nav-but {
+    margin-right: 3vw;
+    border: solid;
+    width: 1vw;
+    height: 1vw;
+    background: #94D3EF;
+    opacity: 0.9;
+    border-radius: 25px;
+}
+
+.stats-text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50%;
 }

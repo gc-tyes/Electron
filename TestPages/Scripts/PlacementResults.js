@@ -24,7 +24,7 @@ var gtx = graph.getContext("2d");
 var placementOrder = [];
 var placementTimes = [];
 var betweenTimes = [];
-var colors = ["#003F5E", "#386874", "#007C84", "#BBE0CE", "#9EA615", "#E8D666", "#FEDCC1", "#F7A08C", "#F1573B"];
+var colors = ["#70C042", "#70C042", "#70C042", "#FFF104", "#FFF104", "#FFF104", "#00ACAC", "#00ACAC", "#00ACAC"];
 var coordinates = {"peg9": [100, 100], "peg8": [250, 100], "peg7": [400, 100],
                     "peg6": [100, 250], "peg5": [250, 250], "peg4": [400, 250],
                     "peg3": [100, 400], "peg2": [250, 400], "peg1": [400, 400]}
@@ -39,15 +39,15 @@ var myChart = new Chart(gtx, {
             label: 'Seconds',
             data: [],
             backgroundColor: [
-                '#003F5E',
-                '#386874',
-                '#007C84',
-                '#BBE0CE',
-                '#9EA615',
-                '#E8D666',
-                '#FEDCC1',
-                '#F7A08C',
-                '#F1573B'
+                '#70C042',
+                '#70C042',
+                '#70C042',
+                '#FFF104',
+                '#FFF104',
+                '#FFF104',
+                '#00ACAC',
+                '#00ACAC',
+                '#00ACAC'
             ],
             borderColor: [
                 '#000000',

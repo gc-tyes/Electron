@@ -11,10 +11,20 @@ function getAvg(list) {
 }
 
 function getOrder(list) {
-    order = [];
-    list.sort();
+    var order = [];
+    var times = [];
+    var dict = {}
+    console.log(list);
     list.forEach(element => {
-        order.push(element[1].split(" ")[0]);
+        dict[element[0]] = element[1].split(" ")[0];
+        times.push(element[0]);
     })
+    console.log(dict);
+    times.sort(function(a, b){return a-b});
+    console.log(times);
+    times.forEach(element => {
+        order.push(dict[element]);
+    })
+    console.log(order);
     return order;
 }

@@ -16,7 +16,54 @@
     <body>
         <div class="background-div specific-bg flex-center">
             <div class="main-div flex-center rounded">
-                <div class="text-div flex-even rounded">
+                <div id="firstPage" class="text-div flex-even rounded">
+                    <div class="nav-buttons">
+                        <button class="btn nav-but" onclick="stats()"></button>
+                        <button class="btn nav-but" onclick="placement()"></button>
+                        <button class="btn nav-but" onclick="removal()"></button>
+                    </div>
+                    <div class="rows">
+                        <div class="right-side text-left">
+                            <div class="stats-text-div">
+                                <h1 id="totalTime" class="stats-text">Total Time: </h1>
+                                <h1 id="avgPlac" class="stats-text">Average Placement Time: </h1>
+                                <h1 id="avgRem" class="stats-text">Average Removal Time: </h1>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="centering">
+                                <canvas id="stacked" class="canvas" width="500" height="500"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="secondPage" class="text-div flex-even rounded gone">
+                        <div class="nav-buttons">
+                            <button class="btn nav-but" onclick="stats()"></button>
+                            <button class="btn nav-but" onclick="placement()"></button>
+                            <button class="btn nav-but" onclick="removal()"></button>
+                        </div>
+                        <div class="rows">
+                            <div class="right-side">
+                                <canvas id="myCanvRem" class="canvas" width="500" height="500"></canvas>
+                                <div class="key-div">
+                                    <h1 class="text">Key</h1>
+                                    <canvas id="keyRem" class="key" width="500" height="100"></canvas>
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="centering">
+                                    <canvas class="my-canvas" id="myChartRem" width="300" height="300"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div id="thirdPage"class="text-div flex-even rounded gone">
+                    <div class="nav-buttons">
+                            <button class="btn nav-but" onclick="stats()"></button>
+                            <button class="btn nav-but" onclick="placement()"></button>
+                            <button class="btn nav-but" onclick="removal()"></button>
+                        </div>
                     <div class="rows">
                         <div class="right-side">
                             <canvas id="myCanv" class="canvas" width="500" height="500"></canvas>
@@ -35,8 +82,10 @@
             </div>
         </div>
 
+        <script src="../Scripts/ResultNavigation.js"></script>
         <script src="../Scripts/PlacementResults.js"></script>
         <script src="../Scripts/RemovalResults.js"></script>
+        <script src="../Scripts/NumericalResults.js"></script>
         <script src="../../node_modules/chart.js/dist/Chart.js"></script>
     </body>
 </html>

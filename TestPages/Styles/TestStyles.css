@@ -82,10 +82,11 @@
 }
 
 .red-dot {
-    background: red;
+    background: white;
     width: 50%;
     height: 50%;
     border-radius: 100%;
+    border: solid;
 }
 
 .green-dot {
@@ -93,6 +94,7 @@
     width: 50%;
     height: 50%;
     border-radius: 100%;
+    border: solid;
 }
 
 .box {
@@ -115,4 +117,8 @@
 
 .big-text {
     font-size: 6.5vw !important;
+}
+
+.stats-text {
+    font-size: 2.4vw;
 }
