@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../contents/css/Dashboard.css" />
+  <title>My Chart</title>
+</head>
+<body>
+  <div class="main-div">
+          <nav class="navbar-sticky nav">
+                  <div class="nav-div nav-padding">
+                      <img class="logo" src="../images/logo2.png" alt="Tyes" />
+                      <ul class="navbar-nav nav-div">
+                          <li class="nav-item">
+                          <a class="nav-text" href="./TherapistDashboard.html">Dashboard <span class="sr-only">(current)</span></a>
+                          </li>
+                          <li class="nav-item">
+                          <a class="nav-text" href="#">Conduct A Test</a>
+                          </li>
+                          <li class="nav-item">
+                          <a class="nav-text" href="#">About Tyes</a>
+                          </li>
+                      </ul>
+                  </div>
+                </nav>
+      <div class="separator-bar"></div>
+      <div class="body text-center">
+        <div class="container">
+          <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
+        <button class="btn btn-success" onclick="updateChart()">Update</button>
+        <button class="btn btn-info" onclick="viewParts()">View Parts</button>
+        <button class="btn btn-info" onclick="viewTotal()">View Total</button>
+      </div>
+      <div class="spacer"></div>
+  </div>
+  <script>
+    var insertionData = [18.29, 17.91, 17.62, 17.19, 16.98, 16.81];
+    var removalData = [10.22, 10.04, 9.95, 9.64, 9.50, 9.39];
+    var totalData = [28.51, 27.95, 27.57, 26.83, 26.48, 26.20];
+    var myChart = document.getElementById('myChart').getContext('2d');
+
+    //Global Options
+    //console.log(Chart.defaults.scale.ticks);
+    Chart.defaults.global.animation.duration = 1500;
+    //Chart.defaults.scale.ticks.beginAtZero = true;
+    //Chart.defaults.global.defaultFontFamily = '',
+    //Chart.defaults.global.defaultFontSize = 18,
+    //Chart.defaults.global.defaultFontColor = '';
+
+    var chart = new Chart(myChart, {
+      type:'bar',
+      data:{
+        labels:['1/25/20', '1/26/20', '1/27/20', '1/28/20', '1/29/20', '1/30/20'],
+        datasets:[{
+          label: 'Time (seconds)',
+          data: totalData,
+          backgroundColor:'#5CBDAA',
+          borderWidth:1,
+          borderColor:'#B5C6CC',
+          hoverBorderWidth:2,
+          hoverBorderColor: '#4A4C61',
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Most Recent Tests Taken',
+          fontSize:24
+        },
+        legend:{
+          display:false
+        },
+        layout:{
+          padding:{
+            left:0,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true,
+          backgroundColor:'rgba(0, 0, 0, 0.6)'
+        },
+        scales:{
+          yAxes:[{
+            ticks:{
+              beginAtZero:false,
+              suggestedMin:24
+            }
+          }]
+        }/*,
+        annotation: {
+          annotations: [{
+            type: 'line',
+            mode: 'horizontal',
+            scaleID: 'y-axis-0',
+            value: 2225,
+          endValue: 0,
+          borderColor: 'rgb(75, 192, 192)',
+          borderWidth: 4,
+          label: {
+            enabled: true,
+            content: 'Trendline',
+            yAdjust: -16,
+            }
+          }]
+        }*/
+      }
+    });
+    function updateChart() {
+      var newDate = "1/31/20";
+      if(chart.data.labels.lastIndexOf(newDate) == -1) {
+        insertionData.push("15.85");
+        removalData.push("9.27");
+        totalData.push("25.12");
+        chart.data.labels.push(newDate);
+      }
+      chart.update();
+    };
+
+    function viewParts() {
+      chart.data.datasets[0].data = insertionData;
+      if (chart.data.datasets[1] == null
+        && chart.data.datasets[2] == null) {
+          chart.data.datasets.push({
+            label: 'Time (seconds)',
+            data: removalData,
+            backgroundColor:'#5CBDAA',
+            borderWidth:1,
+            borderColor:'#B5C6CC',
+            hoverBorderWidth:2,
+            hoverBorderColor: '#4A4C61',
+          });
+        }
+      chart.update();
+    }
+
+    function viewTotal() {
+      chart.data.datasets[0].data = totalData;
+      if(chart.data.datasets[1] != null) {
+        chart.data.datasets.pop();
+      }
+      chart.update();
+    }
+
+  </script>
+</body>
+</html>
