@@ -214,3 +214,15 @@
   display: table;
   clear: both;
 }
+
+.flex-left {
+  order:1;
+  flex-basis:66.67%;
+  border 3px;
+}
+
+.flex-right {
+  order:1;
+  flex-basis:33.33%;
+  border 3px;
+}
