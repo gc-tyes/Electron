@@ -279,3 +279,23 @@ html {
 ::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
+/* user thumbnail styling */
+.thumbnail {
+    background-image: url("https://cdn0.iconfinder.com/data/icons/perfico-basic-essentials/64/Woman_User-512.png");
+    padding-top: 2px;
+    width: 160px;
+    height: 160px;
+    /* text-align: center; */
+    border: solid;
+    border-color: #4A4C61;
+    border-radius: 5px;
+    box-shadow: 6px 6px 5px grey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.3s;
+}
