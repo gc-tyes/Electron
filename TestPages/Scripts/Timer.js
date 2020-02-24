@@ -78,7 +78,7 @@ function stopTime() {
     Tells test that the passed in peg # has been interacted with
 */
 function updatePeg(peg) {
-    if (!statusArr[peg - 1]) {
+    if (!statusArr[peg - 1] && !allIn) {
         statusArr[peg - 1] = 1;
         pegArr[peg - 1].classList.remove("red-dot");
         pegArr[peg - 1].classList.add("green-dot");
@@ -87,7 +87,7 @@ function updatePeg(peg) {
         events[("peg" + peg + " between insertion")] = (time / 100.0) - lastEvent;
         lastEvent = (time / 100.0);
         checkForHalfway();
-    } else {
+    } else if (statusArr[peg - 1]) {
         statusArr[peg - 1] = 0;
         pegArr[peg - 1].classList.add("red-dot");
         pegArr[peg - 1].classList.remove("green-dot");

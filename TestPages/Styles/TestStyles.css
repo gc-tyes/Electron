@@ -5,7 +5,12 @@
 }
 
 .test-bg {
-    background: #FB9214 !important;
+    background: #FB9214;
+    transition: 2s;
+}
+
+.test-bg-error {
+    background: red;
 }
 
 .result-bg {

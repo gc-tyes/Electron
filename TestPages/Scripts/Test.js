@@ -33,6 +33,7 @@ function start() {
     promptText.classList.add("big-text");
     promptText.innerText = "Go!";
     startTimer();
+    beginSerial();
 }
 
 /*

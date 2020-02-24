@@ -112,7 +112,6 @@ function getBetweenTimes() {
 }
 
 function drawMap() {
-    ctx.font = "24px Arial";
     for (var i = 0; i < placementOrder.length; i++) {
         var peg = placementOrder[i];
         var coords = coordinates[peg];
@@ -125,17 +124,16 @@ function drawMap() {
         ctx.fill();
         ctx.stroke();
 
-        // draw connecting line
-        if (i < placementOrder.length - 1) {
-            var nextCoord = coordinates[placementOrder[i + 1]];
-            ctx.beginPath();
-            ctx.moveTo(coords[0],coords[1]);
-            ctx.lineTo(nextCoord[0],nextCoord[1]);
-            ctx.closePath();
-            ctx.stroke();
-        }
+        ctx.fillStyle = "white";
+        ctx.font = "32px Arial";
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 4;
+        ctx.strokeText((i+1), coords[0] - 8, coords[1] + 10);
+        ctx.fillText((i+1), coords[0] - 8, coords[1] + 10);
 
-        ctx.fillStyle = 'black';
+        ctx.fillStyle = "black";
+        ctx.font = "24px Arial";
+        ctx.lineWidth = 1;
         ctx.fillText(text, coords[0] - 25, coords[1] - 55);
     }
 }

@@ -13,10 +13,9 @@
         <link rel="stylesheet" href="../Styles/TestStyles.css">
     </head>
     <body>
-        <div class="background-div test-bg flex-center">
+        <div id="bg" class="background-div test-bg flex-center">
             <div class="main-div flex-center rounded">
                 <div class="text-div text-center flex-even rounded">
-                    <!-- <h5 id="portText" class="port-text">Port Text</h5> -->
                     <h1 id="prompt" class="prompt-text">Place your hand on the well to begin</h1>
                     <div id="pegs" class="gone peg-display-div">
                         <div class="flex-row">
@@ -61,6 +60,7 @@
                 </div>
             </div>
         </div>
+        <script src="../Scripts/serial.js"></script>
         <script src="../Scripts/Timer.js"></script>
         <script src="../Scripts/Test.js"></script>
         <script src="../Scripts/Analytics.js"></script>

@@ -96,7 +96,6 @@ function getBetweenTimesR() {
 }
 
 function drawMapR() {
-    ctxR.font = "24px Arial";
     for (var i = 0; i < removalOrder.length; i++) {
         var peg = removalOrder[i];
         var coords = coordinatesR[peg];
@@ -109,17 +108,17 @@ function drawMapR() {
         ctxR.fill();
         ctxR.stroke();
 
-        // draw connecting line
-        if (i < removalOrder.length - 1) {
-            var nextCoord = coordinatesR[removalOrder[i + 1]];
-            ctxR.beginPath();
-            ctxR.moveTo(coords[0],coords[1]);
-            ctxR.lineTo(nextCoord[0],nextCoord[1]);
-            ctxR.closePath();
-            ctxR.stroke();
-        }
+        // draw placement number
+        ctxR.fillStyle = "white";
+        ctxR.font = "32px Arial";
+        ctxR.strokeStyle = 'black';
+        ctxR.lineWidth = 4;
+        ctxR.strokeText((i+1), coords[0] - 8, coords[1] + 10);
+        ctxR.fillText((i+1), coords[0] - 8, coords[1] + 10);
 
-        ctxR.fillStyle = 'black';
+        ctxR.fillStyle = "black";
+        ctxR.font = "24px Arial";
+        ctxR.lineWidth = 1;
         ctxR.fillText(text, coords[0] - 25, coords[1] - 55);
     }
 }
