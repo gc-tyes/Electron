@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
-    <!-- CSS for bootstrap and Mike's dashboard that I am copping-->
-    <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../contents/css/Dashboard.css" />
-    <link rel="stylesheet" href="../contents/css/LogIn.css" />
-  </head>
-  <body>
-      <template id="user">
-          <div class="alignment" onclick="changePage(this)">
-              <div class="patient-item">
-                  <h1 class="name"></h1>
-                  <h1 class="patient-id"></h1>
-              </div>
-          </div>
-      </template>
-      <div class="main-div">
-              <nav class="navbar-sticky nav">
-                  <div class="nav-div nav-padding">
-                      <img class="logo" src="../images/logo2.png" alt="Tyes" />
-                      <ul class="navbar-nav nav-div">
-                          <li class="nav-item">
-                          <a class="nav-text" href="#">Dashboard <span class="sr-only">(current)</span></a>
-                          </li>
-                          <li class="nav-item">
-                          <a class="nav-text" href="./AboutUs.html">About Tyes</a>
-                          </li>
-                      </ul>
-                  </div>
-                </nav>
-          <div class="separator-bar"></div>
-          <div class="body text-center">
-            <h1 class="title display-3">Your Dashboard</h1>
-            <div class="spacer"></div>
-            <div class="flex-container">
-              <div>
-                <div class="left-column">
-                    <label>Welcome, Sally! Patient since ...</label>
-                      <button class="btn btn-primary">View Profile</button>
-                      <button class="btn btn-primary" href="./Progress.html">View Progress</button>
-                </div>
-              </div>
-              <div class="right-column">
-                <h1 class="heading">Here's Your To-Do List!</h1>
-                <div class="user-text-div">
-                  <ul>Take Test 3 Times This Week</ul>
-                  <ul>Pracitce 5 Games</ul>
-                </div>
-                  <button class="btn btn-primary">Take Test</button>
-                  <button class="btn btn-primary">Practice Games</button>
-                  <div>
-                    <label>Your Therapist</label>
-                  </div>
-              </div>
-            </div>
-          </div>
+
+<head>
+  <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'"> -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+  <!-- CSS for bootstrap and Mike's dashboard that I am copping-->
+  <link rel="stylesheet" href="../contents/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../contents/css/Dashboard.css" />
+  <link rel="stylesheet" href="../contents/css/LogIn.css" />
+</head>
+
+<body>
+  <template id="user">
+    <div class="alignment" onclick="changePage(this)">
+      <div class="patient-item">
+        <h1 class="name"></h1>
+        <h1 class="patient-id"></h1>
       </div>
-      <script src='../scripts/LoadUsers.js'></script>
-      <script src="../scripts/AddUserPopupScript.js"></script>
-  </body>
+    </div>
+  </template>
+  <div class="main-div">
+    <nav class="navbar-sticky nav">
+      <div class="nav-div nav-padding">
+        <img class="logo" src="../images/logo2.png" alt="Tyes" />
+        <ul class="navbar-nav nav-div">
+          <li class="nav-item">
+            <a class="nav-text" href="#">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-text" href="./AboutUs.html">About Tyes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="separator-bar"></div>
+    <div class="body text-center">
+      <h1 class="title display-3">Your Dashboard</h1>
+      <div class="spacer"></div>
+      <div class="flex-container">
+        <div>
+          <div class="left-column">
+            <h1 class="heading">Welcome, Sally! Patient since February 24, 2013</h1>
+            <hr />
+            <a class="btn btn-primary" href="./MyResults.html">View Profile</a>
+            <hr />
+            <a class="btn btn-primary" href="./MyResults.html">View Progress</a>
+            <hr />
+          </div>
+        </div>
+        <div class="right-column">
+          <h1 class="heading">Here's Your To-Do List!</h1>
+          <div class="user-text-div">
+            <p>- Take Test 3 Times</p>
+            <p>- Practice 5 Times</p>
+          </div>
+          <hr />
+          <a class="btn btn-primary" href="../TestPages/HTML/TestMain.html">Take Test</a>
+          <hr />
+          <a class="btn btn-primary" href="../TestPages/HTML/Test.html">Practice</a>
+          <hr />
+          <div>
+            <h1 class="heading">Your therapist is Dr. Keira Bay</h1>
+            <p>Email: kbay@provis.edu Phone: (404) 424-9753</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src='../scripts/LoadUsers.js'></script>
+  <script src="../scripts/AddUserPopupScript.js"></script>
+</body>
+
 </html>
