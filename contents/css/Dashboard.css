@@ -295,7 +295,7 @@ html {
     background-repeat: no-repeat;
     /* background-position: center; */
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: space-evenly;
     transition: 0.3s;
 }
