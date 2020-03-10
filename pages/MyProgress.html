@@ -33,8 +33,15 @@
           <div class="separator-bar"></div>
           <div class="body text-center">
             <div class="container">
-              <h1 class="title display-3">Your Most Recent Tests!</h1>
-              <canvas id="myChart" width="400" height="200"></canvas>
+              <!-- <h1 class="title display-3">Your Most Recent Tests!</h1>
+              <canvas id="myChart" width="400" height="200"></canvas> -->
+              <div class="btn1-div">
+                  <a class="add-btn" href="./MyProfile.html">  Update  </a>
+                  <hr />
+                  <a class="add-btn" href="./MyResults.html">  Show Parts  </a>
+                  <hr />
+                  <a class="add-btn" href="./MyResults.html">  Show Whole  </a>
+              </div>
             </div>
         </div>
     </div>
@@ -58,8 +65,8 @@
           labels:['1/25/20', '1/26/20', '1/27/20', '1/28/20', '1/29/20', '1/30/20'],
           datasets:[{
             label: 'Time (seconds)',
-            data: totalData,
-            backgroundColor:'#5CBDAA',
+            data: removalData,
+            backgroundColor:'#bcbc5c',
             borderWidth:1,
             borderColor:'#B5C6CC',
             hoverBorderWidth:2,
@@ -69,7 +76,7 @@
         options:{
           title:{
             display:true,
-            text:'Most Recent Tests Taken',
+            text:'Peg Removal Times',
             fontSize:24
           },
           legend:{
@@ -91,7 +98,7 @@
             yAxes:[{
               ticks:{
                 beginAtZero:false,
-                suggestedMin:24
+                suggestedMin:9
               }
             }]
           }

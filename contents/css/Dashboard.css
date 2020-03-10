@@ -132,13 +132,15 @@
 }
 
 .btn1-div {
-    height: 15%;
-    display: flex;
+    height: 9%;
+    width: 30%;
+    display: inline-flex;
     flex-direction: row;
     background: #B5C6CC;
     justify-content: center;
     border-top: solid;
     border-width: thin;
+    text-align: center;
 }
 
 .btn2-div {
