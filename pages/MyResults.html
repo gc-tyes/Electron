@@ -36,9 +36,13 @@
         <div class="container">
           <canvas id="myChart" width="400" height="200"></canvas>
         </div>
-        <button class="btn btn-success" onclick="updateChart()">Update</button>
-        <button class="btn btn-info" onclick="viewParts()">View Parts</button>
-        <button class="btn btn-info" onclick="viewTotal()">View Total</button>
+        <div class="btn1-div">
+            <a class="add-btn" onclick="updateChart()">  Update  </a>
+            <hr />
+            <a class="add-btn" onclick="viewParts()">  View Parts  </a>
+            <hr />
+            <a class="add-btn" onclick="viewTotal()">  View Total  </a>
+        </div>
       </div>
       <div class="spacer"></div>
   </div>
@@ -98,23 +102,7 @@
               suggestedMin:24
             }
           }]
-        }/*,
-        annotation: {
-          annotations: [{
-            type: 'line',
-            mode: 'horizontal',
-            scaleID: 'y-axis-0',
-            value: 2225,
-          endValue: 0,
-          borderColor: 'rgb(75, 192, 192)',
-          borderWidth: 4,
-          label: {
-            enabled: true,
-            content: 'Trendline',
-            yAdjust: -16,
-            }
-          }]
-        }*/
+        }
       }
     });
     function updateChart() {
