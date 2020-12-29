@@ -6,6 +6,7 @@ var log = [];
 var awaitingStartInterval;
 // this is a global variable that determines if the user has begun the test
 var testHasBegun = false;
+var sessionId = new Date().getTime();
 
 function startSerial() {
     awaitingStartInterval = setInterval(serialIn, 10);
@@ -30,10 +31,19 @@ function startSerial() {
     }
 
     function readSerialData(data) {
+        // push data to firebase
+        // console.log(timestamp)
+        // var data = [ raw ];
+        console.log(data);
+        // console.log(events);
+        db.ref(`study/user_${sessionId}`).once('value', function(snapshot) {
+            pushSampleData(data, snapshot.val(), sessionId)
+        });
         if (testHasBegun) {
-            var pegNum = data.split(":")[0];
-            console.log("Peg: " + pegNum);
-            updatePeg(parseInt(pegNum));
+            console.log("testbegun")
+            // var pegNum = data.split(":")[0];
+            // console.log("Peg: " + pegNum);
+            // updatePeg(parseInt(pegNum));
         }
     }
 
@@ -78,4 +88,6 @@ startSerial();
 
 function beginSerial() {
     testHasBegun = true;
+    console.log("test started");
+    readSerialData(data);
 }

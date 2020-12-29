@@ -1,3 +1,5 @@
+// methods for TestMain.html, the Electron landing page
+
 // This method changes the screen to the survey results screen
 function toResults() {
     document.location.href = "./TestResults.html"

@@ -78,6 +78,8 @@ function stopTime() {
     Tells test that the passed in peg # has been interacted with
 */
 function updatePeg(peg) {
+    console.log("updatePeg called");
+    console.log(pegArr);
     if (!statusArr[peg - 1] && !allIn) {
         statusArr[peg - 1] = 1;
         pegArr[peg - 1].classList.remove("red-dot");
@@ -109,6 +111,7 @@ function checkForHalfway() {
 
 async function checkForDone() {
     if (allIn && totalOn == 0) {
+        // ENDS TEST
         end();
         console.log(events);
         await(putDataInArr());
@@ -147,6 +150,7 @@ function getDataAnalytics() {
 }
 
 function pushData(data, list) {
+    console.log("push data called");
     if (list) {
         list.push(data);
         db.ref("Tests").update({
@@ -161,4 +165,25 @@ function pushData(data, list) {
         results: data
     })
     console.log(data);
+}
+
+function pushSampleData(data, list, sessionId) {
+    // console.log("push data called");
+    var timestamp = new Date().getTime();
+    
+    if (list) {
+        // console.log(list)
+        // list.push(data);
+        db.ref(`study/user_${sessionId}/${timestamp}`).update({
+            results: data
+        })
+    } else {
+        db.ref(`study/user_${sessionId}/${timestamp}`).update({
+            results: [data]
+        })
+    }
+    // db.ref("MostRecent").update({
+    //     results: data
+    // })
+    // console.log(data);
 }
