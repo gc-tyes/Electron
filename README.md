@@ -5,6 +5,8 @@ When installing this, make sure to do the following steps:
 3- run ./node_modules/.bin/electron-rebuild (please don't run any other commands between npm install and this)
 4- run npm start and you should be good to go
 
+Make sure you are using Node 11. Change by running 'nvm use 11' ('nvm install 11' if it is not yet installed)
+
 
 # IMPORTANT
 In main.js, there is a line of code that says "win.loadFile('./pages/TherapistDashboard.html')". You can change this path to the path of your HTML page so it is what is loaded upon running 'npm start'.
