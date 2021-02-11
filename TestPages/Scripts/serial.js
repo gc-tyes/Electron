@@ -35,20 +35,46 @@ function startSerial() {
         // console.log(timestamp)
         // var data = [ raw ];
         console.log(data);
+        
+        log.push(data);
         // console.log(events);
-        db.ref(`study/user_${sessionId}`).once('value', function(snapshot) {
-            pushSampleData(data, snapshot.val(), sessionId)
-        });
-        if (testHasBegun) {
-            console.log("testbegun")
-            // var pegNum = data.split(":")[0];
-            // console.log("Peg: " + pegNum);
-            // updatePeg(parseInt(pegNum));
-        }
+
+        // OLD STUFF
+        // db.ref(`study/user_${sessionId}`).once('value', function(snapshot) {
+        //     pushSampleData(data, snapshot.val(), sessionId)
+        // });
+        // if (testHasBegun) {
+        //     console.log("testbegun")
+        //     // var pegNum = data.split(":")[0];
+        //     // console.log("Peg: " + pegNum);
+        //     // updatePeg(parseInt(pegNum));
+        // }
+
+        // TODO: add to array
     }
 
     function showPortClose() {
         console.log('port closed.');
+
+        // csv stuff
+        
+        let csvContent = "data:text/csv;charset=utf-8,";
+        // console.log(log);
+        // log.forEach(function(rowArray) {
+        //     console.log(rowArray);
+        //     let row = rowArray.join(",");
+        //     csvContent += row + "\r\n";
+        // });
+        let row = log.join();
+        csvContent += row + "\r\n";
+
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "my_data.csv");
+        document.body.appendChild(link); // Required for FF
+
+        link.click(); // This will download the data file named "my_data.csv".
     }
 
     function showError(error) {
