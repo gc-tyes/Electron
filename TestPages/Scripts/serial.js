@@ -1,6 +1,8 @@
 var serialport = require('serialport');
 const datarate = 9600;
 var log = [];
+var started = false;
+var myPort = null;
 
 // This interval is used to check for the user pressing the sensor that starts the test
 var awaitingStartInterval;
@@ -85,7 +87,7 @@ function startSerial() {
         var portName = await getPort();
 
         if (portName == "") {
-            portText.innerText = "No usb serial port found";
+            portText.innerText = "No usb serial port found. Recording should NOT be started";
             // mainDiv.classList.remove("test-bg");
             mainDiv.classList.add("test-bg-error");
             // document.getElementById("waitingText").innerHTML = "Please Connect Device"
@@ -94,10 +96,10 @@ function startSerial() {
             clearInterval(awaitingStartInterval);
             console.log("Using port: " + portName + " with data rate " + datarate);
             mainDiv.classList.remove("test-bg-error");
-            portText.innerText = ("Place your hand on the well to begin");
+            // portText.innerText = ("Place your hand on the well to begin");
             // document.getElementById("waitingText").innerHTML = "Press Sensor To Begin"
         }
-        var myPort = new serialport(portName, datarate);
+        myPort = new serialport(portName, datarate);
         var Readline = serialport.parsers.Readline; // make instance of Readline parser
         var parser = new Readline(); // make a new parser to read ASCII lines
         myPort.pipe(parser); // pipe the serial stream to the parser
@@ -116,4 +118,16 @@ function beginSerial() {
     testHasBegun = true;
     console.log("test started");
     readSerialData(data);
+}
+
+function startRecording() {
+    if (!started) {
+        console.log("started")
+        started = true;
+        document.getElementById("finesseButton").innerHTML = "STOP recording"
+    } else {
+        started = false;
+        console.log("stopped")
+        myPort.on('close', showPortClose);
+    }
 }
