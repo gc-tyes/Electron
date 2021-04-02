@@ -39,21 +39,51 @@
         </nav>
         <div class="separator-bar"></div>
         <div class="body text-center">
-            <h1 class="title display-4">Therapist Dashboard</h1>
+            <h1 class="title display-3">Therapist Dashboard</h1>
             <div class="spacer"></div>
-            <!-- <button body = "center" class="btn-lg btn-success"formaction="/AddAPatient.html">Add A Patient</button> -->
-            <button id="addAPatient"  class="submit-button" >Add a patient to your directory</button>
+             <button id="addAPatient" onClick="" href="./AddAPatient.html" class="btn btn-info">Add A Patient</button>
 
+            <!-- <button body = "center" class="btn-lg btn-success"formaction="/AddAPatient.html">Add A Patient</button> -->
+            <!-- <button id="addAPatient"  class="submit-button" >Add a patient to your directory</button>
+ -->
 			<script type="text/javascript">
     			document.getElementById("addAPatient").onclick = function () {
         		location.href = "AddAPatient.html";
     			};
 			</script>
-            </div>
+                <h1 class = "title-display-4">Your Patients</h1>
+                <p class="text-center subtext"><i>(Click on any of your patients for a more detailed breakdown!)</i></p>
+                <!-- <div class="spacer" ></div>
+                <div class="user-div-alignment">
+                    <div id="usersDiv" class="usersDiv">
+                        <div class="thumbnail-new" onclick="showPopup()">
+                            <div class="user-text-div">
+                                <h1 class="thumbnail-text">Add New Patient</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="spacer"></div>
+	            <div id="popupDiv" class="add-user-popup-div gone">
+	                <div class="add-user-popup mx-auto">
+	                    <div id="firstPrompt" class="text-center">
+	                            <h1 class="popup-prompt-text">Would you like to generate a new user code?</h1>
+	                            <div class="first-prompt-buttons mx-auto">
+	                                <button class="popup-prompt-button" onclick="generateCode()">Yes</button>
+	                                <button class="popup-prompt-button" onclick="removePopup()">Cancel</button>
+	                            </div>
+	                    </div>
+	                    <div id="generateCode" class="text-center gone">
+	                        <h1 id="codeText" class="popup-prompt-text">Your code is: </h1>
+	                        <button class="mx-auto popup-prompt-button" onclick="removePopup()">OK</button>
+	                    </div>
+	                </div>
+	            </div>
+        	</div> -->
         </div>
-        <div class="spacer"></div>
-        
-    </div>
+        <!-- <script src='../scripts/LoadUsers.js'></script> -->
+        <script src="../scripts/AddUserPopupScript.js"></script>
+
     <script src='../scripts/AuthorizeUsers.js'></script>
 </body>
 
