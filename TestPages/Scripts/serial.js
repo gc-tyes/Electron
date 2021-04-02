@@ -33,12 +33,19 @@ function startSerial() {
     }
 
     function readSerialData(data) {
+      if(started) {
+        console.log(data);
+        log.push(data);
+      } else {
+        var temp = true;
+      }
+      if (temp) {
+        showPortClose();
+        temp = false;
+      }
         // push data to firebase
         // console.log(timestamp)
-        // var data = [ raw ];
-        console.log(data);
-        
-        log.push(data);
+        // var data = [ raw ]
         // console.log(events);
 
         // OLD STUFF
@@ -59,7 +66,7 @@ function startSerial() {
         console.log('port closed.');
 
         // csv stuff
-        
+
         let csvContent = "data:text/csv;charset=utf-8,";
         // console.log(log);
         // log.forEach(function(rowArray) {
@@ -85,6 +92,8 @@ function startSerial() {
 
     async function serialIn() {
         var portName = await getPort();
+        var temp = started;
+        startRecording();
 
         if (portName == "") {
             portText.innerText = "No usb serial port found. Recording should NOT be started";
@@ -101,14 +110,13 @@ function startSerial() {
         }
         myPort = new serialport(portName, datarate);
         var Readline = serialport.parsers.Readline; // make instance of Readline parser
-        var parser = new Readline(); // make a new parser to read ASCII lines
+        var parser = new Readline(); // make a new parser to read ASCII line
         myPort.pipe(parser); // pipe the serial stream to the parser
         // myPort.on('open', showPortOpen);
         parser.on('data', readSerialData);
         myPort.on('close', showPortClose);
         myPort.on('error', showError);
     }
-
     serialIn();
 }
 
@@ -122,12 +130,11 @@ function beginSerial() {
 
 function startRecording() {
     if (!started) {
-        console.log("started")
+        console.log("test started");
         started = true;
-        document.getElementById("finesseButton").innerHTML = "STOP recording"
+        document.getElementById("finesseButton").innerHTML = "STOP Recording";
     } else {
         started = false;
-        console.log("stopped")
-        myPort.on('close', showPortClose);
+        document.getElementById("finesseButton").innerHTML = "START Recording";
     }
 }
