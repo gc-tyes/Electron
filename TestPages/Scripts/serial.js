@@ -40,7 +40,7 @@ function startSerial() {
         var temp = true;
       }
       if (temp) {
-        showPortClose();
+        //showPortClose();
         temp = false;
       }
         // push data to firebase
